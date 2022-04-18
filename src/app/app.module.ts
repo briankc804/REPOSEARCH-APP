@@ -10,6 +10,7 @@ import { RepoFormComponent } from './repo-form/repo-form.component';
 import {HttpClientModule} from '@angular/common/http'
 import { GetApiService } from './get-api.service';
 import { DateCountPipe } from './date-count.pipe';
+import { DateFormatPipe } from './date-format.pipe';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { DateCountPipe } from './date-count.pipe';
     ReposearchComponent,
     RepoFormComponent,
     DateCountPipe,
+    DateFormatPipe,
     
   ],
   imports: [
