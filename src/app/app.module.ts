@@ -7,6 +7,10 @@ import { AppComponent } from './app.component';
 import { ReposearchComponent } from './reposearch/reposearch.component';
 import {HttpClientModule} from '@angular/common/http';
 import { RepoformComponent } from './repoform/repoform.component';
+import { RepositoryComponent } from './repository/repository.component';
+import { UserComponent } from './user/user.component';
+import { RepoFormComponent } from './repo-form/repo-form.component';
+import { RepositoryDetailsComponent } from './repository-details/repository-details.component';
 
 
 @NgModule({
@@ -14,6 +18,10 @@ import { RepoformComponent } from './repoform/repoform.component';
     AppComponent,
     ReposearchComponent,
     RepoformComponent,
+    RepositoryComponent,
+    UserComponent,
+    RepoFormComponent,
+    RepositoryDetailsComponent,
     
   ],
   imports: [
