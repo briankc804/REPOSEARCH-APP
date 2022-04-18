@@ -11,6 +11,7 @@ import { RepositoryComponent } from './repository/repository.component';
 import { UserComponent } from './user/user.component';
 import { RepoFormComponent } from './repo-form/repo-form.component';
 import { RepositoryDetailsComponent } from './repository-details/repository-details.component';
+import { UserDetailsComponent } from './user-details/user-details.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { RepositoryDetailsComponent } from './repository-details/repository-deta
     UserComponent,
     RepoFormComponent,
     RepositoryDetailsComponent,
+    UserDetailsComponent,
     
   ],
   imports: [
