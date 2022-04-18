@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RepoFormComponent } from './repo-form.component';
+import { RepoformComponent } from './repoform.component';
 
-describe('RepoFormComponent', () => {
-  let component: RepoFormComponent;
-  let fixture: ComponentFixture<RepoFormComponent>;
+describe('RepoformComponent', () => {
+  let component: RepoformComponent;
+  let fixture: ComponentFixture<RepoformComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RepoFormComponent ]
+      declarations: [ RepoformComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RepoFormComponent);
+    fixture = TestBed.createComponent(RepoformComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

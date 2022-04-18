@@ -1,33 +1,27 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
 
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ReposearchComponent } from './reposearch/reposearch.component';
-import { RepoFormComponent } from './repo-form/repo-form.component';
-import {HttpClientModule} from '@angular/common/http'
-import { GetApiService } from './get-api.service';
-import { DateCountPipe } from './date-count.pipe';
-import { DateFormatPipe } from './date-format.pipe';
+import {HttpClientModule} from '@angular/common/http';
+import { RepoformComponent } from './repoform/repoform.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     ReposearchComponent,
-    RepoFormComponent,
-    DateCountPipe,
-    DateFormatPipe,
+    RepoformComponent,
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
-    FormsModule
+    HttpClientModule
   ],
-  providers: [GetApiService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
