@@ -2,8 +2,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Repository } from '../repository';
 import { GetApiService } from '../get-api.service';
-import { Subscription } from 'rxjs';
 
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-repository',
@@ -13,37 +13,37 @@ import { Subscription } from 'rxjs';
 export class RepositoryComponent implements OnInit {
   GetApiService!: GetApiService;
   repos:Repository[] = [];
+  username = new FormControl("")
 
-  mySubscription: Subscription = new Subscription;
+  
   
 
   constructor(getApiService:GetApiService) {
     this.GetApiService= getApiService
   }
 
-   ngOnDestroy():void{
-    this.mySubscription.unsubscribe();
-   }
-
+   
     ngOnInit(): void {
     }
 
-    getPublicRepositories(username:string) {
-      this.mySubscription.add(this.GetApiService.fetchRepo(username).subscribe((reposArray:any) => {
-        // this.repos = repos; add repos object to the array
-        for(let i=0;i<=reposArray.length; i++) {
-          let repoInfor = new Repository(reposArray[i].name,reposArray[i].description, reposArray[i].html_url,reposArray[i].created_at);
-          this.repos.push(repoInfor)
-        }
+   async getPublicRepositories(username:string) {
+      await this.GetApiService.fetchRepo(username).then((info:any) => {
+      for(let x=0; x<=info.length;x +=1){
+        let cover = new Repository( info [x].name, info[x].description, info[x].html_url, info[x].created_at)
+        this.repos.push(cover)
+        console.log(this.repos)
+      }
+      console.log(info)
       })
-      )
+      
     }
 
-    githubSearch(inputValue: string) {
-      this.getPublicRepositories(inputValue)
-      return false
+    
+
+    search(){
+      console.log(this.username.value)
+      this.getPublicRepositories(this.username.value)
+      
     }
-
-
 
 }

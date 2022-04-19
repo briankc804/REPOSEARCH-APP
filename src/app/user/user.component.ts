@@ -15,6 +15,7 @@ export class UserComponent implements OnInit {
   user:User;
   getApiService:GetApiService;
 
+  
   constructor(getapiService:GetApiService) {
     this.getApiService = getapiService
     this.user = new User("","","",0,0,0,new Date());
@@ -24,7 +25,9 @@ export class UserComponent implements OnInit {
   }
   searchGithub(){
     console.log(this.name.value)
+    this.getInfoWithPromise(this.name.value)
   } 
+
 
   async getInfoWithPromise(username:string){
     await this.getApiService.getUserInfor(username).then((data:any) => {

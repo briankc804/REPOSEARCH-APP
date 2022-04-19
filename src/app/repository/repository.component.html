@@ -1,12 +1,21 @@
 <div class="container">
-    <app-repo-form (inputValue)="githubSearch($event)"></app-repo-form>
-    <div class="row justify-content-center">
-        <div class="col-8  bg-body my-4 rounded shadow-sm pt-2">
-            <h4 class="text-center mb-2">User repositories</h4>
-            <hr>
-            <div *ngFor="let repo of repos">
-                <app-repository-details [repository]="repo"></app-repository-details>
+    <div class="row justify-content-evenly">
+        <div class="col-6 ">
+            <input type="text" [formControl]="username" class="form-control" id="username" placeholder="@github username">
             </div>
+            <div class="col-3">
+            <button (click)="search()"type ="submit" class="btn mb-3">Search</button>
         </div>
     </div>
+
+     <div class="row justify-content-center">
+                <div class="col-8 bg-body my-4 rounded shadow-sm pt-2">
+                <h4 class="text-center mb-2">User repositories</h4>
+                <hr>
+                <div *ngFor="let repo of repos">
+                <!-- <app-repository-details [repository]="repo"></app-repository-details> -->
+                {{repo.name}}
+                </div>
+                </div>
+     </div>
 </div>

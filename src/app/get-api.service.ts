@@ -12,8 +12,15 @@ export class GetApiService{
   constructor(private http: HttpClient) {}
 
   fetchRepo(username:string):any {
-    return this.http.get(`https://api.github.com/users/${username}/repos`);
+    
+    const promise = new Promise((resolve, reject) =>{
+      resolve(firstValueFrom(this.http.get(`https://api.github.com/users/${username}/repos`)))
+    })
+
+    return promise
+
   }
+ 
 
   getUserInfor(username:string):any {
 

@@ -1,16 +1,12 @@
-<div class="card mb-3" style="max-width: 45rem;">
-    <div class="row g-0">
-      <div class="col-md-4">
-        <img src="{{user.avatar_url}}" class="img-fluid rounded-start" alt="{{user.name}} avatar">
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title"><a href="{{user.url}}" target="_blank">{{user.name}}</a></h5>
-          <p class="card-text">Repos:{{user.public_repos}}</p>
-          <p class="card-text">Followers: {{user.followers}}</p>
-          <p class="card-text">Following: {{user.following}}</p>
-          <p class="card-text"><small class="text-muted">Created: {{user.created_at|date}}</small></p>
-        </div>
-      </div>
+
+  <div class="card" style="width: 45rem;">
+    <img src="{{user.avatar_url}}" class="card-img-top" alt="avatar image">
+    <div class="card-body">
+      <h5 class="card-title">username: {{user.name}}</h5>
+      <p class="card-text">followers:  {{user.followers}}</p>
+      <p class="card-text">following: {{user.following}}</p>
+      <p class="card-text">repos: {{user.public_repos}}</p>
+      <p class="card-text"> created: {{user.created_at|date}}</p>
+      <a href="{{user.url}}" class="btn btn-primary">Go to github profile</a>
     </div>
   </div>
