@@ -1,23 +1,27 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http'
-import { User } from '/home/briankc/Documents/REPOSEARCH-APP/REPOSEARCH/src/app/user';
-import { Repository } from './repository';
+import { HttpClient } from '@angular/common/http';
+import { firstValueFrom } from 'rxjs';
+
+
+
 @Injectable({
   providedIn: 'root'
 })
+export class GetApiService{
 
+  constructor(private http: HttpClient) {}
 
-export class GetApiService {
-  user: import("/home/briankc/Documents/REPOSEARCH-APP/REPOSEARCH/src/app/user").User | undefined;
-  repoData: never[] | undefined;
-  getUserData(username: string | undefined) {
-    throw new Error('Method not implemented.');
+  fetchRepo(username:string):any {
+    return this.http.get(`https://api.github.com/users/${username}/repos`);
   }
 
-  constructor(
-     private http:HttpClient
-    ) { }
-    apiCall(){
-      return this.http.get('https://api.github.com/users/${name}/repos');
-    }
+  getUserInfor(username:string):any {
+
+    const promise = new Promise((resolve, reject) =>{
+      resolve(firstValueFrom(this.http.get(`https://api.github.com/users/${username}`)))
+    })
+
+    return promise
+
+  }
 }

@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit ,Output, EventEmitter} from '@angular/core';
+import { FormControl,Validators } from '@angular/forms';
 @Component({
   selector: 'app-repo-form',
   templateUrl: './repo-form.component.html',
@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RepoFormComponent implements OnInit {
 
+  @Output() inputValue = new EventEmitter<string>();
+  name = new FormControl('',Validators.required);
+
+  searchGithub(name:string){
+    this.inputValue.emit(name);
+  }
   constructor() { }
 
   ngOnInit(): void {

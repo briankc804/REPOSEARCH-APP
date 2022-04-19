@@ -1,1 +1,12 @@
-<p>repository works!</p>
+<div class="container">
+    <app-repo-form (inputValue)="githubSearch($event)"></app-repo-form>
+    <div class="row justify-content-center">
+        <div class="col-8  bg-body my-4 rounded shadow-sm pt-2">
+            <h4 class="text-center mb-2">User repositories</h4>
+            <hr>
+            <div *ngFor="let repo of repos">
+                <app-repository-details [repository]="repo"></app-repository-details>
+            </div>
+        </div>
+    </div>
+</div>
