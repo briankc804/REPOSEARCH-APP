@@ -4,7 +4,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Description
 This project enters the username or repository name data inputed and returns one's github's information
-
+ ## Technologies used
+ HTML
+ CSS
+ JS
+ ANGULAR
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
