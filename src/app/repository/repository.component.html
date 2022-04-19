@@ -5,6 +5,7 @@
             </div>
             <div class="col-3">
             <button (click)="search()"type ="submit" class="btn mb-3">Search</button>
+            <a routerLink="/user" class="btn btn-primary">search user </a>
         </div>
     </div>
 
@@ -13,8 +14,8 @@
                 <h4 class="text-center mb-2">User repositories</h4>
                 <hr>
                 <div *ngFor="let repo of repos">
-                <!-- <app-repository-details [repository]="repo"></app-repository-details> -->
-                {{repo.name}}
+                <app-repository-details [repository]="repo"></app-repository-details>
+                <!-- {{repo.name}} -->
                 </div>
                 </div>
      </div>
