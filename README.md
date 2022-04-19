@@ -9,6 +9,8 @@ This project enters the username or repository name data inputed and returns one
  CSS
  JS
  ANGULAR
+ ## License
+ used an MIT license
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
